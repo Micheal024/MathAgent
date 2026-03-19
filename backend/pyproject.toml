@@ -1,0 +1,65 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "math-modeling-agent"
+version = "0.1.0"
+description = "数学建模智能 Agent — 对标 Manus/OpenManus 架构"
+requires-python = ">=3.9"
+dependencies = [
+    # Web Framework
+    "fastapi>=0.115.0",
+    "uvicorn[standard]>=0.34.0",
+    "python-multipart>=0.0.18",
+    # Database
+    "sqlalchemy>=2.0.36",
+    "alembic>=1.14.0",
+    "asyncpg>=0.30.0",
+    "pgvector>=0.3.6",
+    # Redis / Task Queue
+    "redis>=5.2.0",
+    "celery>=5.4.0",
+    # LLM
+    "openai>=1.60.0",
+    "tiktoken>=0.8.0",
+    # Agent Tools
+    "e2b-code-interpreter>=1.1.0",
+    "httpx>=0.28.0",
+    # Auth
+    "python-jose[cryptography]>=3.3.0",
+    "passlib[bcrypt]>=1.7.4",
+    # Config
+    "tomli>=2.2.0",
+    "pydantic>=2.10.0",
+    "pydantic-settings>=2.7.0",
+    # Utilities
+    "python-dotenv>=1.0.1",
+    "loguru>=0.7.3",
+    # Agent Framework (core)
+    "camel-ai>=0.1.6",
+    "Pillow>=10.0.0",
+    "greenlet>=3.0.3",
+    "aiosqlite>=0.20.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.0",
+    "pytest-asyncio>=0.25.0",
+    "httpx>=0.28.0",
+    "ruff>=0.9.0",
+]
+
+[tool.setuptools.packages.find]
+include = ["app*"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "N", "W"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="dark">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description"
+    content="MathModelingAgent — AI-powered math modeling assistant for MCM/ICM/CUMCM competitions">
+  <meta name="theme-color" content="#000000">
+  <meta name="api-base" content="">
+  <meta name="ws-base" content="">
+  <title>MathModeler — AI Math Modeling Agent</title>
+
+  <!-- Favicon -->
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%2318181b'/><text x='50%25' y='60%25' font-family='Inter,sans-serif' font-size='18' font-weight='700' fill='white' text-anchor='middle' dominant-baseline='middle'>M</text></svg>">
+
+  <!-- Marked.js — Markdown rendering -->
+  <script src="https://cdn.jsdelivr.net/npm/marked@12.0.0/marked.min.js"></script>
+
+  <!-- Prism.js — Syntax highlighting -->
+  <link id="prism-theme" rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-okaidia.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-python.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-json.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-latex.min.js"></script>
+
+  <!-- KaTeX — LaTeX math rendering -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css?v=12">
+
+  <script>
+    window.__MATH_MODELING_CONFIG__ = window.__MATH_MODELING_CONFIG__ || {};
+  </script>
+</head>
+
+<body>
+  <div id="app"></div>
+
+  <!-- Scripts (order matters: api & ws before app) -->
+  <script src="api.js?v=12"></script>
+  <script src="ws.js?v=12"></script>
+  <script src="app.js?v=12"></script>
+</body>
+
+</html>

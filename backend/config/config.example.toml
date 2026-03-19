@@ -1,0 +1,30 @@
+# Math Modeling Agent Configuration
+# Copy this file to config.toml and fill in your API keys
+
+[llm]
+model = "gpt-4o"
+base_url = "https://api.openai.com/v1"
+api_key = "sk-..."   # Replace with your actual API key
+max_tokens = 4096
+temperature = 0.0
+
+[llm.vision]
+model = "gpt-4o"
+base_url = "https://api.openai.com/v1"
+api_key = "sk-..."   # Replace with your actual API key
+
+[database]
+url = "postgresql+asyncpg://postgres:postgres@localhost:5432/mathagent"
+
+[redis]
+url = "redis://localhost:6379/0"
+
+[sandbox]
+provider = "e2b"     # "e2b" or "local"
+e2b_api_key = ""     # Your E2B API key
+timeout_seconds = 30
+
+[auth]
+secret_key = "your-secret-key-here"
+algorithm = "HS256"
+access_token_expire_minutes = 1440  # 24 hours
